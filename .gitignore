@@ -1,6 +1,6 @@
 .DS_Store
 bathhouse-master/node_modules
-bathhouse_front-master/node_modules
+bathhouse-front-master/node_modules
 bathhouse-master/.env
 /dist
 
