@@ -3,6 +3,7 @@ var router = express.Router();
 const Reservations = require('../../services/Reservations');
 const {AuthenticatedOnly} = require("../../middlewares/index");
 
+
 router.get('/getSingle', AuthenticatedOnly, function(req, res, next) {
     Reservations.GetSingleReservation(req.query.id).then(data => res.status(200).json({ message: 'Запрос выполнен успешно', data}))
         .catch(err => next(err));

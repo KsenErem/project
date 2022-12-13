@@ -11,7 +11,7 @@ function AuthenticatedOnly(req, res, next) {
   
       if (err) return res.status(403).send({"error": "invalid token"});
   
-      req.user = user
+      req.user = user;
   
       next()
     })

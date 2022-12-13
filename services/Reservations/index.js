@@ -7,6 +7,7 @@ const httpError = require('http-errors');
 
 class Reservations {
 
+
     async GetSingleReservation(id) {
         //SELECT * FROM `reservations` WHERE `start_time` <= "2022-06-27 15:55:00" OR `end_time` >= "2022-06-27 13:55:00"
         let result = await Reservation.findOne({
@@ -97,7 +98,7 @@ class Reservations {
 
     async GetTable(gender) {
         let result = [];
-        for (let i = 10; i < 24; i++) {
+        for (let i = 10; i <= 21; i++) {
             if (i < 10) {
                 result.push(`0${i}:00`);
                 result.push(`0${i}:30`);
@@ -106,12 +107,7 @@ class Reservations {
                 result.push(`${i}:30`);
             }
         }
-
-        result.push(`24:00`);
-        result.push(`00:30`);
-        result.push(`01:00`);
-        result.push(`01:30`);
-
+        result.push(`22:00`);
 
         let rows = 30;
 

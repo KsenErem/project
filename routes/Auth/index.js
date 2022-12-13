@@ -16,7 +16,7 @@ router.post('/login', function(req, res, next) {
 });
 
 router.post('/checkToken', AuthenticatedOnly, function(req, res, next) {
-    Auth.CheckToken(req.body)
+    Auth.CheckToken(req.body, req.user)
         .then(data => res.status(200).json({ message: 'Запрос выполнен успешно', data}))
         .catch(err => next(err));
 });
